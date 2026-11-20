@@ -1,0 +1,479 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para mi niña bonita 🎀</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Nunito:wght@400;500;600;700&display=swap');
+
+:root {
+  --fondo:#fff4f8;
+  --rosa-claro:#ffe3ed;
+  --rosa:#f7b6ce;
+  --rosa-fuerte:#e78eaf;
+  --rosa-oscuro:#bd668b;
+  --blanco:#fff;
+  --texto:#87566b;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--fondo);
+  color:var(--texto);
+  font-family:'Nunito',sans-serif;
+  overflow-x:hidden;
+}
+main{position:relative;z-index:1}
+.fondito{
+  position:fixed;inset:0;overflow:hidden;
+  pointer-events:none;z-index:0;
+}
+.floating{
+  position:absolute;bottom:-40px;
+  color:#e78eaf;opacity:.65;
+  animation:up linear forwards;
+}
+@keyframes up{
+  0%{transform:translateY(0) rotate(0);opacity:0}
+  15%{opacity:.7}
+  100%{transform:translateY(-110vh) rotate(40deg);opacity:0}
+}
+header{text-align:center;padding:60px 15px 30px}
+.bow{font-size:42px}
+.mini{
+  letter-spacing:4px;font-size:11px;
+  color:var(--rosa-oscuro);
+}
+h1{
+  font-family:'Dancing Script',cursive;
+  font-size:clamp(45px,9vw,75px);
+  color:var(--rosa-oscuro);
+  margin:15px 0;
+}
+.subtitle{font-size:14px;color:#b47d94}
+.wrap{width:min(900px,92%);margin:auto}
+.hero{text-align:center;padding:25px 15px 65px}
+.hero-art{
+  background:white;border:5px solid white;
+  border-radius:28px;padding:22px;
+  max-width:620px;margin:auto;
+  box-shadow:0 12px 35px #e8a4bf44;
+}
+.hero-art .kitty{
+  width:180px;height:190px;object-fit:contain;
+}
+.hero-art .daniel{
+  width:180px;height:190px;object-fit:contain;
+}
+.hero-art .hearts{font-size:26px;color:#e78eaf}
+.intro{
+  max-width:600px;margin:25px auto 0;
+  line-height:2;font-size:15px;
+}
+section{text-align:center;padding:55px 15px}
+.section-title{
+  font-family:'Dancing Script',cursive;
+  color:var(--rosa-oscuro);font-size:43px;
+  margin-bottom:12px;
+}
+.description{
+  font-size:13px;color:#b47d94;margin-bottom:30px;
+}
+.cards{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:20px;max-width:720px;margin:auto;
+}
+.card{
+  background:white;border:2px solid #f9d6e3;
+  border-radius:23px;padding:15px;
+  box-shadow:0 8px 25px #e8a4bf33;
+}
+.card img{
+  width:100%;height:230px;object-fit:contain;
+}
+.card h3{
+  font-family:'Dancing Script',cursive;
+  font-size:29px;color:var(--rosa-oscuro);
+}
+.card p{font-size:12px;margin-top:8px}
+.couple{
+  max-width:650px;margin:auto;
+  background:white;border-radius:25px;
+  padding:25px;border:2px solid #f9d6e3;
+  box-shadow:0 10px 30px #e8a4bf33;
+}
+.couple-images{
+  display:flex;align-items:center;justify-content:center;
+  gap:12px;
+}
+.couple-images img{
+  width:43%;height:220px;object-fit:contain;
+}
+.couple .love{
+  font-size:25px;color:#e78eaf;
+}
+.phrase{
+  font-family:'Dancing Script',cursive;
+  font-size:30px;color:var(--rosa-oscuro);
+  margin-top:20px;
+}
+.letter{
+  max-width:720px;margin:auto;
+  background:white;border:2px solid #f9d6e3;
+  border-radius:25px;padding:35px 30px;
+  box-shadow:0 12px 35px #e8a4bf33;
+  text-align:left;line-height:2.05;font-size:14px;
+}
+.letter h3{
+  font-family:'Dancing Script',cursive;
+  font-size:38px;color:var(--rosa-oscuro);
+  text-align:center;margin-bottom:22px;
+}
+.letter p{margin-bottom:17px}
+.signature{
+  text-align:center;font-family:'Dancing Script',cursive;
+  font-size:29px;color:var(--rosa-oscuro);margin-top:25px;
+}
+.surprise{padding:65px 15px 85px}
+button{
+  border:0;border-radius:35px;
+  padding:16px 30px;
+  color:white;font-weight:700;font-size:15px;
+  font-family:'Nunito',sans-serif;
+  background:linear-gradient(135deg,#f8c3d7,#e78eaf);
+  box-shadow:0 8px 22px #e8a4bf55;
+  cursor:pointer;transition:.3s;
+}
+button:hover{transform:scale(1.06)}
+#gift{
+  display:none;max-width:570px;margin:30px auto 0;
+  padding:25px;background:white;
+  border:2px solid #f9d6e3;border-radius:25px;
+  box-shadow:0 12px 35px #e8a4bf44;
+  animation:appear .8s ease;
+}
+.gift-scene{
+  position:relative;
+  display:flex;justify-content:center;align-items:center;
+  min-height:280px;
+}
+.gift-scene img{
+  width:220px;height:250px;object-fit:contain;
+}
+.gift-bouquet{
+  font-size:100px;
+  position:absolute;right:5%;bottom:5px;
+  filter:drop-shadow(0 5px 5px #e8a4bf55);
+  transform:rotate(-12deg);
+}
+#gift h3{
+  font-family:'Dancing Script',cursive;
+  font-size:38px;color:var(--rosa-oscuro);
+  margin:12px;
+}
+#gift p{font-size:14px;line-height:1.9}
+@keyframes appear{
+  from{opacity:0;transform:translateY(25px) scale(.95)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+footer{
+  text-align:center;padding:25px;
+  font-size:12px;color:#bd8ba0;
+}
+@media(max-width:600px){
+  header{padding-top:40px}
+  .cards{gap:10px}
+  .card{padding:9px}
+  .card img{height:180px}
+  .letter{padding:25px 19px;font-size:13px}
+  .couple-images img{height:170px}
+  .gift-bouquet{font-size:75px;right:0}
+}
+</style>
+</head>
+
+<body>
+<div class="fondito" id="fondito"></div>
+
+<main>
+
+<header>
+  <div class="bow">🎀</div>
+  <div class="mini">A LITTLE GIFT FOR YOU</div>
+  <h1>Para mi niña bonita</h1>
+  <p class="subtitle">Una cartita hecha con todo mi corazón ♡</p>
+</header>
+
+<div class="hero">
+  <div class="hero-art">
+    <div class="couple-images">
+      <img class="kitty"
+      src="https://i.shgcdn.com/1ec9c187-9579-42d4-be9e-f4161e8df9e1/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
+      alt="Hello Kitty">
+      <span class="hearts">♡</span>
+      <img class="daniel"
+      src="https://corporate.sanrio.co.jp/en/business-info/images/img_dear-daniel.png"
+      alt="Dear Daniel">
+    </div>
+    <p class="phrase">A little world full of love ♡</p>
+  </div>
+
+  <p class="intro">
+    Hoy preparé algo especial para ti. Quería regalarte
+    un pequeño lugar lleno de flores, corazones y palabras
+    que nacen de lo más profundo de mi corazón.
+    Espero que cada detalle consiga sacarte una sonrisa.
+    Porque si hay alguien que merece recibir cosas bonitas,
+    esa persona eres tú. 💗
+  </p>
+</div>
+
+<section>
+  <h2 class="section-title">Personajes especiales</h2>
+  <p class="description">Dos personitas que acompañarán esta cartita 🎀</p>
+
+  <div class="cards">
+    <div class="card">
+      <img
+      src="https://i.shgcdn.com/1ec9c187-9579-42d4-be9e-f4161e8df9e1/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
+      alt="Hello Kitty">
+      <h3>Hello Kitty</h3>
+      <p>Un lacito lleno de ternura ♡</p>
+    </div>
+
+    <div class="card">
+      <img
+      src="https://corporate.sanrio.co.jp/en/business-info/images/img_dear-daniel.png"
+      alt="Dear Daniel">
+      <h3>Dear Daniel</h3>
+      <p>El compañero de Kitty ♡</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Juntos ♡</h2>
+  <p class="description">Porque las historias bonitas se construyen con cariño.</p>
+
+  <div class="couple">
+    <div class="couple-images">
+      <img
+      src="https://i.shgcdn.com/1ec9c187-9579-42d4-be9e-f4161e8df9e1/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
+      alt="Hello Kitty">
+      <span class="love">♥</span>
+      <img
+      src="https://corporate.sanrio.co.jp/en/business-info/images/img_dear-daniel.png"
+      alt="Dear Daniel">
+    </div>
+    <p class="phrase">You are my favorite story.</p>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Una carta para ti</h2>
+  <p class="description">Léela despacito, mi amor. Cada palabra es para ti.</p>
+
+  <article class="letter">
+    <h3>Mi amor hermoso ♡</h3>
+
+    <p>
+      Mi niña bonita, hoy quiero tomarme un momento para
+      decirte todo eso que muchas veces llevo guardado
+      en mi corazón. Quizás no siempre encuentre las
+      palabras adecuadas, quizás a veces me dé vergüenza
+      expresar todo lo que siento, pero eso no significa
+      que mi cariño sea pequeño. Al contrario, hay tantas
+      cosas que quisiera decirte que a veces no sé por
+      dónde comenzar.
+    </p>
+
+    <p>
+      Desde que llegaste a mi vida, te has convertido
+      en alguien demasiado especial para mí. Me encanta
+      saber que existes, que puedo pensar en ti y sonreír
+      sin darme cuenta, que puedo imaginar momentos
+      bonitos a tu lado y que tengo a una persona con
+      quien compartir mis días. No sabes lo feliz que
+      me hace tenerte en mi vida.
+    </p>
+
+    <p>
+      Quiero que sepas que me enamora tu manera de ser,
+      tu forma de hablar, tus ocurrencias, tus ojitos,
+      tu sonrisa y esos pequeños detalles que quizás
+      tú consideras normales, pero que para mí son
+      maravillosos. No tienes que hacer nada extraordinario
+      para hacerme feliz. Muchas veces basta con un
+      mensajito tuyo para cambiar por completo mi día.
+    </p>
+
+    <p>
+      Me gustaría poder estar a tu lado en cada momento,
+      abrazarte cuando estés triste, darte besitos cuando
+      estés feliz y recordarte lo preciosa que eres cuando
+      tengas un día en el que no te sientas así.
+      Quisiera que nunca te falte alguien que te escuche,
+      que te comprenda y que te recuerde que tus
+      sentimientos importan muchísimo.
+    </p>
+
+    <p>
+      No quiero que pienses que tienes que ser perfecta
+      conmigo. Quiero conocerte en todas tus versiones:
+      cuando estés feliz, cuando estés cansada, cuando
+      tengas ganas de hablar muchísimo y cuando solamente
+      quieras descansar. Quiero que puedas ser tú misma,
+      sin miedo a mostrar lo que sientes.
+    </p>
+
+    <p>
+      Si algún día las cosas se ponen difíciles, quiero
+      que recuerdes que podemos hablar, escucharnos y
+      comprendernos. No quiero que las palabras bonitas
+      se queden solamente en esta carta. Quiero demostrarte
+      con mis acciones que te respeto, que te valoro y
+      que jamás jugaría con tus sentimientos.
+    </p>
+
+    <p>
+      También quiero darte las gracias. Gracias por
+      cada conversación, por cada sonrisa que me has
+      regalado, por cada momento que hemos compartido
+      y por permitirme conocerte un poquito más.
+      Gracias por ser esa niña tan especial que consigue
+      hacerme sentir tantas cosas bonitas.
+    </p>
+
+    <p>
+      A veces me pongo a imaginar todos los momentos
+      que todavía podríamos vivir. Los abrazos que
+      nos debemos, las risas, las llamadas, las
+      conversaciones hasta tarde y todas esas pequeñas
+      aventuras que algún día podremos recordar.
+      Me hace ilusión seguir construyendo recuerdos
+      contigo, sin prisas y con mucho cariño.
+    </p>
+
+    <p>
+      Quiero que nunca olvides lo valiosa que eres.
+      Eres mucho más que una cara bonita, mucho más
+      que una sonrisa hermosa. Me encanta la persona
+      que eres, tu corazón, tu personalidad y todo
+      aquello que te hace única. No necesitas compararte
+      con nadie, porque para mí tienes algo que nadie
+      más podría reemplazar.
+    </p>
+
+    <p>
+      Si pudiera enviarte un abrazo dentro de esta
+      página, te mandaría el más grande del mundo.
+      Si pudiera poner todas las flores que mereces,
+      llenaría esta página entera de ellas.
+      Y si pudiera escribir mil veces cuánto te quiero,
+      todavía sentiría que me faltan palabras.
+    </p>
+
+    <p>
+      Mi amor, quiero seguir eligiéndote cada día,
+      seguir cuidando lo bonito que tenemos y seguir
+      encontrando nuevas maneras de hacerte sentir
+      querida. No necesito una fecha especial para
+      recordarte cuánto significas para mí.
+    </p>
+
+    <p>
+      Espero que cuando termines de leer esta carta
+      tengas una sonrisa en tu carita. Quería que
+      tuvieras algo que pudieras guardar y volver
+      a abrir cuando quieras recordar cuánto te quiero.
+      Esta pequeña página fue preparada pensando
+      en ti, en tu sonrisa y en lo especial que eres
+      para mi corazón.
+    </p>
+
+    <p>
+      Te quiero muchísimo, mi niña. Gracias por existir,
+      por ser tú y por formar parte de mi vida.
+      Ojalá pueda seguir regalándote motivos para
+      sonreír durante muchísimo tiempo.
+    </p>
+
+    <div class="signature">
+      Con todo mi amor, solamente para ti. ♡
+    </div>
+  </article>
+</section>
+
+<section class="surprise">
+  <h2 class="section-title">Una última sorpresita 🎀</h2>
+  <p class="description">
+    Todavía tengo un regalito guardado para ti...
+  </p>
+
+  <button onclick="openGift()">Toca aquí, mi amor ♡</button>
+
+  <div id="gift">
+    <h3>¡Estas flores son para ti! 💗</h3>
+
+    <div class="gift-scene">
+      <img
+      src="https://i.shgcdn.com/1ec9c187-9579-42d4-be9e-f4161e8df9e1/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
+      alt="Hello Kitty">
+      <span class="gift-bouquet">💐</span>
+    </div>
+
+    <p>
+      Mi niña hermosa, imagina que Hello Kitty llegó
+      hasta ti para entregarte este ramo de flores.
+      Cada florecita representa un poquito del cariño
+      que siento por ti. Ojalá pudiera entregártelo
+      personalmente, abrazarte muy fuerte y decirte
+      cuánto te quiero.
+    </p>
+
+    <div class="signature">Para ti, mi amor. ♡</div>
+  </div>
+</section>
+
+<footer>
+  Hecho con muchísimo amor 🎀
+  <br>
+  Siempre tú, siempre especial. ♡
+</footer>
+
+</main>
+
+<script>
+const fondo = document.getElementById("fondito");
+
+function heart() {
+  const h = document.createElement("span");
+  h.className = "floating";
+  h.textContent = Math.random() > .5 ? "♡" : "♥";
+  h.style.left = Math.random()*100 + "vw";
+  h.style.fontSize = (14+Math.random()*22)+"px";
+  h.style.animationDuration = (7+Math.random()*7)+"s";
+  fondo.appendChild(h);
+  setTimeout(()=>h.remove(),15000);
+}
+
+setInterval(heart,450);
+
+function openGift() {
+  const gift = document.getElementById("gift");
+  gift.style.display = "block";
+  gift.scrollIntoView({behavior:"smooth",block:"center"});
+  for(let i=0;i<18;i++){
+    setTimeout(heart,i*100);
+  }
+}
+</script>
+
+</body>
+    </html>
+    
